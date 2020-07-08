@@ -1,0 +1,34 @@
+<extension name="BackupResults" version="1">
+    <author>Khesh S</author>
+    <description>
+    Save the results file with desired name, time stamp and design point number to a desginated directory
+    </description>
+    <guid>bcc95572-8b3c-451e-89ad-5c9cbd514c72</guid>
+    <script src="script.py" />
+    <interface context="Mechanical">
+        <images>images</images>
+        <toolbar name="name1" caption="RST">
+            <entry name="savetherst" icon="save" caption="Backup Results" userobject="saverst">
+            </entry>
+        </toolbar>
+    </interface>
+    <simdata context="Mechanical">
+        <result location="node" name="saverst" type="scalar" version="1" caption="Backup Results" icon="save" timehistory="false">
+            <callbacks>
+                <evaluate>copy_rst</evaluate>
+            </callbacks>
+            <property name="geometry" caption="Geometry" control="scoping" visible="false" />
+            <property name="directory" caption="Directory" control="folderopen" />
+            <property name="filename" caption="File Name" control="string" />
+            <property name="timestamp" caption="Add Timestamp" control="select" default="No">
+                <attributes options="No,Yes"/>
+            </property>
+            <property name="designpoint" caption="Add Design Points" control="select" default="No">
+                <attributes options="No,Yes"/>
+            </property>
+            <property name="input" caption="Backup Input" control="select" default="No">
+                <attributes options="No,Yes"/>
+            </property>
+        </result>
+    </simdata>
+</extension>
