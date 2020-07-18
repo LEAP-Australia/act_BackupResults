@@ -6,10 +6,8 @@
     <guid>bcc95572-8b3c-451e-89ad-5c9cbd514c72</guid>
     <script src="script.py" />
     <interface context="Mechanical">
-        <images>images</images>
-        <toolbar name="name1" caption="RST">
-            <entry name="savetherst" icon="save" caption="Backup Results" userobject="saverst">
-            </entry>
+        <toolbar name="name1" caption="Backup">
+            <entry name="savetherst" icon="save" caption="Backup Results" userobject="saverst"></entry>
         </toolbar>
     </interface>
     <simdata context="Mechanical">
